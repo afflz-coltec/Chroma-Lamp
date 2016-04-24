@@ -1,0 +1,33 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE WORK.pacote.ALL;
+
+ENTITY contador_clk IS
+	GENERIC (valor_maximo: INTEGER := (33330000-1));
+	PORT(clk: IN STD_LOGIC;
+	     led: OUT STD_LOGIC);
+END ENTITY;
+
+ARCHITECTURE arch OF contador_clk IS
+	SIGNAL led_state: STD_LOGIC := '1'; -- 1 é apagado, 0 é aceso
+	SIGNAL contador: UNSIGNED (27 DOWNTO 0) := (OTHERS => '0'); --contar até 66.660.000
+	
+--o valor maximo eh esse pq em um segundo, o led tem que ficar meio segundo aceso e meio apagado
+	BEGIN
+		PROCESS (clk)
+			BEGIN
+				IF (clk'EVENT AND clk = '1' AND clk'LAST_VALUE = '0') THEN --borda de subida
+					--incrementar um contador
+					contador <= contador + 1;
+						
+						IF (contador <= valor_maximo) THEN
+							led_state <= NOT led_state;
+							contador <= (OTHERS => '0');
+						END IF;
+				END IF;
+		END PROCESS;
+		
+		led <= led_state;
+END arch;

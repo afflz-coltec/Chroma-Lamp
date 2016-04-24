@@ -1,0 +1,476 @@
+Classic Timing Analyzer report for Trabalho_VHDL
+Fri Nov 20 11:43:28 2015
+Quartus II Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                               ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                              ; To                               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 4.264 ns                         ; switch4                           ; temp_verde                       ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.997 ns                        ; ADC_INTERFACE:ADC1|ADC_CNTRL_DATA ; ADC_CNTRL_DATA                   ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 2.942 ns                         ; ADC_SSTRB                         ; ADC_INTERFACE:ADC1|SR_CAPTURE[0] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 23.46 MHz ( period = 42.630 ns ) ; AUTO_PULSE_MOD:APM1|PULSE_W_I[6]  ; PWM:PWM1|CLK1                    ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                   ;                                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+----------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM1270F256C5      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                              ; To                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 23.46 MHz ( period = 42.630 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[6]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 16.275 ns               ;
+; N/A                                     ; 23.65 MHz ( period = 42.276 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[5]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 16.098 ns               ;
+; N/A                                     ; 23.72 MHz ( period = 42.166 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[11] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 16.043 ns               ;
+; N/A                                     ; 23.74 MHz ( period = 42.128 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[0]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 16.024 ns               ;
+; N/A                                     ; 23.98 MHz ( period = 41.696 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[4]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.808 ns               ;
+; N/A                                     ; 24.15 MHz ( period = 41.408 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[7]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.664 ns               ;
+; N/A                                     ; 24.21 MHz ( period = 41.308 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[12] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.614 ns               ;
+; N/A                                     ; 24.43 MHz ( period = 40.940 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[9]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.430 ns               ;
+; N/A                                     ; 24.52 MHz ( period = 40.776 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[8]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.348 ns               ;
+; N/A                                     ; 24.53 MHz ( period = 40.766 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[1]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.343 ns               ;
+; N/A                                     ; 24.59 MHz ( period = 40.670 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[10] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.295 ns               ;
+; N/A                                     ; 24.88 MHz ( period = 40.190 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[2]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 15.055 ns               ;
+; N/A                                     ; 25.05 MHz ( period = 39.918 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[16] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.919 ns               ;
+; N/A                                     ; 25.29 MHz ( period = 39.536 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[3]  ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.728 ns               ;
+; N/A                                     ; 25.47 MHz ( period = 39.266 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[13] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.593 ns               ;
+; N/A                                     ; 25.85 MHz ( period = 38.680 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[14] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.300 ns               ;
+; N/A                                     ; 26.19 MHz ( period = 38.178 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[15] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.049 ns               ;
+; N/A                                     ; 26.69 MHz ( period = 37.474 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[17] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.697 ns               ;
+; N/A                                     ; 27.05 MHz ( period = 36.972 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[19] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.446 ns               ;
+; N/A                                     ; 27.14 MHz ( period = 36.844 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[18] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.382 ns               ;
+; N/A                                     ; 27.28 MHz ( period = 36.662 ns )                    ; AUTO_PULSE_MOD:APM1|PULSE_W_I[20] ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.291 ns               ;
+; N/A                                     ; 64.47 MHz ( period = 15.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.801 ns               ;
+; N/A                                     ; 65.82 MHz ( period = 15.192 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.483 ns               ;
+; N/A                                     ; 65.88 MHz ( period = 15.178 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.469 ns               ;
+; N/A                                     ; 66.02 MHz ( period = 15.147 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.438 ns               ;
+; N/A                                     ; 66.22 MHz ( period = 15.102 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.393 ns               ;
+; N/A                                     ; 66.38 MHz ( period = 15.064 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.355 ns               ;
+; N/A                                     ; 66.44 MHz ( period = 15.051 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.342 ns               ;
+; N/A                                     ; 66.83 MHz ( period = 14.963 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.254 ns               ;
+; N/A                                     ; 66.89 MHz ( period = 14.950 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.241 ns               ;
+; N/A                                     ; 67.27 MHz ( period = 14.865 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.156 ns               ;
+; N/A                                     ; 67.39 MHz ( period = 14.839 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 14.130 ns               ;
+; N/A                                     ; 68.29 MHz ( period = 14.644 ns )                    ; PWM:PWM1|COUNT[4]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.935 ns               ;
+; N/A                                     ; 68.34 MHz ( period = 14.633 ns )                    ; PWM:PWM1|COUNT[2]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.924 ns               ;
+; N/A                                     ; 68.47 MHz ( period = 14.604 ns )                    ; PWM:PWM1|COUNT[6]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.895 ns               ;
+; N/A                                     ; 68.65 MHz ( period = 14.567 ns )                    ; PWM:PWM1|COUNT[5]                 ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.858 ns               ;
+; N/A                                     ; 68.90 MHz ( period = 14.513 ns )                    ; PWM:PWM1|COUNT[25]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.804 ns               ;
+; N/A                                     ; 69.23 MHz ( period = 14.445 ns )                    ; PWM:PWM1|COUNT[14]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.736 ns               ;
+; N/A                                     ; 70.35 MHz ( period = 14.214 ns )                    ; PWM:PWM1|COUNT[29]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.505 ns               ;
+; N/A                                     ; 70.89 MHz ( period = 14.107 ns )                    ; PWM:PWM1|COUNT[11]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.398 ns               ;
+; N/A                                     ; 71.47 MHz ( period = 13.991 ns )                    ; PWM:PWM1|COUNT[28]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.282 ns               ;
+; N/A                                     ; 72.01 MHz ( period = 13.887 ns )                    ; PWM:PWM1|COUNT[12]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.178 ns               ;
+; N/A                                     ; 72.11 MHz ( period = 13.867 ns )                    ; PWM:PWM1|COUNT[15]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.158 ns               ;
+; N/A                                     ; 72.52 MHz ( period = 13.790 ns )                    ; PWM:PWM1|COUNT[26]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.081 ns               ;
+; N/A                                     ; 72.58 MHz ( period = 13.777 ns )                    ; PWM:PWM1|COUNT[13]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 13.068 ns               ;
+; N/A                                     ; 73.13 MHz ( period = 13.675 ns )                    ; PWM:PWM1|COUNT[20]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 12.966 ns               ;
+; N/A                                     ; 73.81 MHz ( period = 13.548 ns )                    ; PWM:PWM1|COUNT[16]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 12.839 ns               ;
+; N/A                                     ; 74.31 MHz ( period = 13.458 ns )                    ; PWM:PWM1|COUNT[27]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 12.749 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.24 MHz ( period = 13.117 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 12.408 ns               ;
+; N/A                                     ; 76.45 MHz ( period = 13.080 ns )                    ; PWM:PWM1|COUNT[19]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 12.371 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.13 MHz ( period = 12.799 ns )                    ; PWM:PWM1|COUNT[3]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 12.090 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.22 MHz ( period = 12.785 ns )                    ; PWM:PWM1|COUNT[9]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 12.076 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[0]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[1]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[2]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[4]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[3]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.25 MHz ( period = 12.780 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[5]  ; clk        ; clk      ; None                        ; None                      ; 12.071 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.41 MHz ( period = 12.754 ns )                    ; PWM:PWM1|COUNT[7]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 12.045 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[6]  ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[7]  ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[8]  ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[9]  ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[10] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[11] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[12] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[13] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[14] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[15] ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[16] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[17] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[18] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[19] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[20] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[21] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[22] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[23] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[24] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.49 MHz ( period = 12.740 ns )                    ; BUTTON_PRESS:BTP1|count_A[29]     ; BUTTON_PRESS:BTP1|count[25] ; clk        ; clk      ; None                        ; None                      ; 12.031 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.68 MHz ( period = 12.709 ns )                    ; PWM:PWM1|COUNT[21]                ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 12.000 ns               ;
+; N/A                                     ; 78.69 MHz ( period = 12.708 ns )                    ; PWM:PWM1|COUNT[17]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 11.999 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 78.92 MHz ( period = 12.671 ns )                    ; PWM:PWM1|COUNT[24]                ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.962 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.00 MHz ( period = 12.658 ns )                    ; PWM:PWM1|COUNT[0]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.949 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[0]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[1]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[2]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[4]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[3]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.43 MHz ( period = 12.590 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[5]  ; clk        ; clk      ; None                        ; None                      ; 11.881 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.55 MHz ( period = 12.570 ns )                    ; PWM:PWM1|COUNT[10]                ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.861 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.64 MHz ( period = 12.557 ns )                    ; PWM:PWM1|COUNT[8]                 ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.848 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[6]  ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[7]  ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[8]  ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[9]  ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[10] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[11] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[12] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[13] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[14] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.65 MHz ( period = 12.555 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[15] ; clk        ; clk      ; None                        ; None                      ; 11.846 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[16] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[17] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[18] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[19] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[20] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[21] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[22] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[23] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[24] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.68 MHz ( period = 12.550 ns )                    ; BUTTON_PRESS:BTP1|count_A[23]     ; BUTTON_PRESS:BTP1|count[25] ; clk        ; clk      ; None                        ; None                      ; 11.841 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[5]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[0]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[4]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[3]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[2]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[1]           ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[22]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[21]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[20]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[23]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[24]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[25]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[16]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[17]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[19]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 79.94 MHz ( period = 12.510 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[18]          ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 80.02 MHz ( period = 12.497 ns )                    ; PWM:PWM1|COUNT[30]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 11.788 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[13]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[12]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[10]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[11]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[14]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[15]          ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[6]           ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[7]           ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[8]           ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.14 MHz ( period = 12.478 ns )                    ; PWM:PWM1|COUNT[1]                 ; PWM:PWM1|COUNT[9]           ; clk        ; clk      ; None                        ; None                      ; 11.769 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.18 MHz ( period = 12.472 ns )                    ; PWM:PWM1|COUNT[23]                ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.763 ns               ;
+; N/A                                     ; 80.19 MHz ( period = 12.471 ns )                    ; PWM:PWM1|COUNT[18]                ; PWM:PWM1|CLK1               ; clk        ; clk      ; None                        ; None                      ; 11.762 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[31]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[26]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[27]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[28]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[29]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.35 MHz ( period = 12.446 ns )                    ; PWM:PWM1|COUNT[22]                ; PWM:PWM1|COUNT[30]          ; clk        ; clk      ; None                        ; None                      ; 11.737 ns               ;
+; N/A                                     ; 80.46 MHz ( period = 12.428 ns )                    ; BUTTON_PRESS:BTP1|count_A[17]     ; BUTTON_PRESS:BTP1|count[1]  ; clk        ; clk      ; None                        ; None                      ; 11.719 ns               ;
+; N/A                                     ; 80.46 MHz ( period = 12.428 ns )                    ; BUTTON_PRESS:BTP1|count_A[17]     ; BUTTON_PRESS:BTP1|count[2]  ; clk        ; clk      ; None                        ; None                      ; 11.719 ns               ;
+; N/A                                     ; 80.46 MHz ( period = 12.428 ns )                    ; BUTTON_PRESS:BTP1|count_A[17]     ; BUTTON_PRESS:BTP1|count[4]  ; clk        ; clk      ; None                        ; None                      ; 11.719 ns               ;
+; N/A                                     ; 80.46 MHz ( period = 12.428 ns )                    ; BUTTON_PRESS:BTP1|count_A[17]     ; BUTTON_PRESS:BTP1|count[3]  ; clk        ; clk      ; None                        ; None                      ; 11.719 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                   ;                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; tsu                                                                                         ;
++-------+--------------+------------+-----------+----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                               ; To Clock ;
++-------+--------------+------------+-----------+----------------------------------+----------+
+; N/A   ; None         ; 4.264 ns   ; switch4   ; temp_vermelho                    ; clk      ;
+; N/A   ; None         ; 4.264 ns   ; switch4   ; temp_azul                        ; clk      ;
+; N/A   ; None         ; 4.264 ns   ; switch4   ; temp_verde                       ; clk      ;
+; N/A   ; None         ; 4.009 ns   ; switch3   ; temp_vermelho                    ; clk      ;
+; N/A   ; None         ; 4.009 ns   ; switch3   ; temp_azul                        ; clk      ;
+; N/A   ; None         ; 4.009 ns   ; switch3   ; temp_verde                       ; clk      ;
+; N/A   ; None         ; 3.530 ns   ; switch3   ; temp_amarelo                     ; clk      ;
+; N/A   ; None         ; 2.936 ns   ; switch2   ; temp_azul                        ; clk      ;
+; N/A   ; None         ; 2.917 ns   ; switch2   ; temp_amarelo                     ; clk      ;
+; N/A   ; None         ; 2.663 ns   ; switch4   ; temp_amarelo                     ; clk      ;
+; N/A   ; None         ; 2.427 ns   ; switch2   ; temp_verde                       ; clk      ;
+; N/A   ; None         ; 2.422 ns   ; switch2   ; temp_vermelho                    ; clk      ;
+; N/A   ; None         ; 2.359 ns   ; switch1   ; temp_azul                        ; clk      ;
+; N/A   ; None         ; 2.351 ns   ; switch1   ; temp_amarelo                     ; clk      ;
+; N/A   ; None         ; 2.043 ns   ; switch1   ; temp_verde                       ; clk      ;
+; N/A   ; None         ; 2.041 ns   ; switch1   ; temp_vermelho                    ; clk      ;
+; N/A   ; None         ; -1.857 ns  ; ADC_SSTRB ; ADC_INTERFACE:ADC1|SR_CAPTURE[1] ; clk      ;
+; N/A   ; None         ; -2.027 ns  ; ADC_DATA  ; ADC_INTERFACE:ADC1|DIG_RESULT[0] ; clk      ;
+; N/A   ; None         ; -2.388 ns  ; ADC_SSTRB ; ADC_INTERFACE:ADC1|SR_CAPTURE[0] ; clk      ;
++-------+--------------+------------+-----------+----------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; tco                                                                                                 ;
++-------+--------------+------------+-----------------------------------+----------------+------------+
+; Slack ; Required tco ; Actual tco ; From                              ; To             ; From Clock ;
++-------+--------------+------------+-----------------------------------+----------------+------------+
+; N/A   ; None         ; 12.997 ns  ; ADC_INTERFACE:ADC1|ADC_CNTRL_DATA ; ADC_CNTRL_DATA ; clk        ;
+; N/A   ; None         ; 9.934 ns   ; contador_clk:ISL1|led_state       ; CLK_ADC        ; clk        ;
+; N/A   ; None         ; 9.764 ns   ; temp_amarelo                      ; led_amarelo    ; clk        ;
+; N/A   ; None         ; 9.729 ns   ; temp_azul                         ; led_azul       ; clk        ;
+; N/A   ; None         ; 9.694 ns   ; temp_verde                        ; led_verde      ; clk        ;
+; N/A   ; None         ; 9.685 ns   ; temp_vermelho                     ; led_vermelho   ; clk        ;
++-------+--------------+------------+-----------------------------------+----------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; th                                                                                                ;
++---------------+-------------+-----------+-----------+----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                               ; To Clock ;
++---------------+-------------+-----------+-----------+----------------------------------+----------+
+; N/A           ; None        ; 2.942 ns  ; ADC_SSTRB ; ADC_INTERFACE:ADC1|SR_CAPTURE[0] ; clk      ;
+; N/A           ; None        ; 2.581 ns  ; ADC_DATA  ; ADC_INTERFACE:ADC1|DIG_RESULT[0] ; clk      ;
+; N/A           ; None        ; 2.411 ns  ; ADC_SSTRB ; ADC_INTERFACE:ADC1|SR_CAPTURE[1] ; clk      ;
+; N/A           ; None        ; -1.487 ns ; switch1   ; temp_vermelho                    ; clk      ;
+; N/A           ; None        ; -1.489 ns ; switch1   ; temp_verde                       ; clk      ;
+; N/A           ; None        ; -1.797 ns ; switch1   ; temp_amarelo                     ; clk      ;
+; N/A           ; None        ; -1.805 ns ; switch1   ; temp_azul                        ; clk      ;
+; N/A           ; None        ; -1.868 ns ; switch2   ; temp_vermelho                    ; clk      ;
+; N/A           ; None        ; -1.873 ns ; switch2   ; temp_verde                       ; clk      ;
+; N/A           ; None        ; -2.099 ns ; switch4   ; temp_azul                        ; clk      ;
+; N/A           ; None        ; -2.109 ns ; switch4   ; temp_amarelo                     ; clk      ;
+; N/A           ; None        ; -2.313 ns ; switch4   ; temp_verde                       ; clk      ;
+; N/A           ; None        ; -2.317 ns ; switch4   ; temp_vermelho                    ; clk      ;
+; N/A           ; None        ; -2.363 ns ; switch2   ; temp_amarelo                     ; clk      ;
+; N/A           ; None        ; -2.382 ns ; switch2   ; temp_azul                        ; clk      ;
+; N/A           ; None        ; -2.400 ns ; switch3   ; temp_amarelo                     ; clk      ;
+; N/A           ; None        ; -2.413 ns ; switch3   ; temp_azul                        ; clk      ;
+; N/A           ; None        ; -3.455 ns ; switch3   ; temp_vermelho                    ; clk      ;
+; N/A           ; None        ; -3.455 ns ; switch3   ; temp_verde                       ; clk      ;
++---------------+-------------+-----------+-----------+----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Nov 20 11:43:27 2015
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Trabalho_VHDL -c Trabalho_VHDL
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "contador_clk:ISL1|led_state" as buffer
+Info: Clock "clk" has Internal fmax of 23.46 MHz between source register "AUTO_PULSE_MOD:APM1|PULSE_W_I[6]" and destination register "PWM:PWM1|CLK1" (period= 42.63 ns)
+    Info: + Longest register to register delay is 16.275 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y6_N4; Fanout = 4; REG Node = 'AUTO_PULSE_MOD:APM1|PULSE_W_I[6]'
+        Info: 2: + IC(2.613 ns) + CELL(0.747 ns) = 3.360 ns; Loc. = LC_X9_Y5_N0; Fanout = 2; COMB Node = 'PWM:PWM1|Add1~42'
+        Info: 3: + IC(0.000 ns) + CELL(0.123 ns) = 3.483 ns; Loc. = LC_X9_Y5_N1; Fanout = 2; COMB Node = 'PWM:PWM1|Add1~47'
+        Info: 4: + IC(0.000 ns) + CELL(0.123 ns) = 3.606 ns; Loc. = LC_X9_Y5_N2; Fanout = 2; COMB Node = 'PWM:PWM1|Add1~77'
+        Info: 5: + IC(0.000 ns) + CELL(0.123 ns) = 3.729 ns; Loc. = LC_X9_Y5_N3; Fanout = 2; COMB Node = 'PWM:PWM1|Add1~82'
+        Info: 6: + IC(0.000 ns) + CELL(0.261 ns) = 3.990 ns; Loc. = LC_X9_Y5_N4; Fanout = 6; COMB Node = 'PWM:PWM1|Add1~57'
+        Info: 7: + IC(0.000 ns) + CELL(0.975 ns) = 4.965 ns; Loc. = LC_X9_Y5_N7; Fanout = 4; COMB Node = 'PWM:PWM1|Add1~50'
+        Info: 8: + IC(1.983 ns) + CELL(0.511 ns) = 7.459 ns; Loc. = LC_X11_Y5_N6; Fanout = 1; COMB Node = 'PWM:PWM1|LessThan2~30'
+        Info: 9: + IC(2.423 ns) + CELL(0.200 ns) = 10.082 ns; Loc. = LC_X8_Y4_N6; Fanout = 1; COMB Node = 'PWM:PWM1|LessThan2~32'
+        Info: 10: + IC(0.765 ns) + CELL(0.511 ns) = 11.358 ns; Loc. = LC_X8_Y4_N5; Fanout = 1; COMB Node = 'PWM:PWM1|LessThan2~33'
+        Info: 11: + IC(2.547 ns) + CELL(0.740 ns) = 14.645 ns; Loc. = LC_X11_Y6_N4; Fanout = 1; COMB Node = 'PWM:PWM1|LessThan2~34'
+        Info: 12: + IC(0.534 ns) + CELL(0.200 ns) = 15.379 ns; Loc. = LC_X11_Y6_N5; Fanout = 1; COMB Node = 'PWM:PWM1|CLK1~2'
+        Info: 13: + IC(0.305 ns) + CELL(0.591 ns) = 16.275 ns; Loc. = LC_X11_Y6_N6; Fanout = 6; REG Node = 'PWM:PWM1|CLK1'
+        Info: Total cell delay = 5.105 ns ( 31.37 % )
+        Info: Total interconnect delay = 11.170 ns ( 68.63 % )
+    Info: - Smallest clock skew is -4.331 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.819 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 66; CLK Node = 'clk'
+            Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X11_Y6_N6; Fanout = 6; REG Node = 'PWM:PWM1|CLK1'
+            Info: Total cell delay = 2.081 ns ( 54.49 % )
+            Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+        Info: - Longest clock path from clock "clk" to source register is 8.150 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 66; CLK Node = 'clk'
+            Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y3_N4; Fanout = 120; REG Node = 'contador_clk:ISL1|led_state'
+            Info: 3: + IC(3.037 ns) + CELL(0.918 ns) = 8.150 ns; Loc. = LC_X9_Y6_N4; Fanout = 4; REG Node = 'AUTO_PULSE_MOD:APM1|PULSE_W_I[6]'
+            Info: Total cell delay = 3.375 ns ( 41.41 % )
+            Info: Total interconnect delay = 4.775 ns ( 58.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "temp_vermelho" (data pin = "switch4", clock pin = "clk") is 4.264 ns
+    Info: + Longest pin to register delay is 7.750 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_R16; Fanout = 5; PIN Node = 'switch4'
+        Info: 2: + IC(4.202 ns) + CELL(0.511 ns) = 5.845 ns; Loc. = LC_X9_Y8_N2; Fanout = 3; COMB Node = 'temp_verde~0'
+        Info: 3: + IC(0.662 ns) + CELL(1.243 ns) = 7.750 ns; Loc. = LC_X9_Y8_N9; Fanout = 1; REG Node = 'temp_vermelho'
+        Info: Total cell delay = 2.886 ns ( 37.24 % )
+        Info: Total interconnect delay = 4.864 ns ( 62.76 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.819 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(0.918 ns) = 3.819 ns; Loc. = LC_X9_Y8_N9; Fanout = 1; REG Node = 'temp_vermelho'
+        Info: Total cell delay = 2.081 ns ( 54.49 % )
+        Info: Total interconnect delay = 1.738 ns ( 45.51 % )
+Info: tco from clock "clk" to destination pin "ADC_CNTRL_DATA" through register "ADC_INTERFACE:ADC1|ADC_CNTRL_DATA" is 12.997 ns
+    Info: + Longest clock path from clock "clk" to source register is 8.150 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y3_N4; Fanout = 120; REG Node = 'contador_clk:ISL1|led_state'
+        Info: 3: + IC(3.037 ns) + CELL(0.918 ns) = 8.150 ns; Loc. = LC_X12_Y7_N5; Fanout = 5; REG Node = 'ADC_INTERFACE:ADC1|ADC_CNTRL_DATA'
+        Info: Total cell delay = 3.375 ns ( 41.41 % )
+        Info: Total interconnect delay = 4.775 ns ( 58.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y7_N5; Fanout = 5; REG Node = 'ADC_INTERFACE:ADC1|ADC_CNTRL_DATA'
+        Info: 2: + IC(2.149 ns) + CELL(2.322 ns) = 4.471 ns; Loc. = PIN_B12; Fanout = 0; PIN Node = 'ADC_CNTRL_DATA'
+        Info: Total cell delay = 2.322 ns ( 51.93 % )
+        Info: Total interconnect delay = 2.149 ns ( 48.07 % )
+Info: th for register "ADC_INTERFACE:ADC1|SR_CAPTURE[0]" (data pin = "ADC_SSTRB", clock pin = "clk") is 2.942 ns
+    Info: + Longest clock path from clock "clk" to destination register is 8.150 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_H5; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(1.738 ns) + CELL(1.294 ns) = 4.195 ns; Loc. = LC_X12_Y3_N4; Fanout = 120; REG Node = 'contador_clk:ISL1|led_state'
+        Info: 3: + IC(3.037 ns) + CELL(0.918 ns) = 8.150 ns; Loc. = LC_X13_Y9_N1; Fanout = 1; REG Node = 'ADC_INTERFACE:ADC1|SR_CAPTURE[0]'
+        Info: Total cell delay = 3.375 ns ( 41.41 % )
+        Info: Total interconnect delay = 4.775 ns ( 58.59 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.429 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_A12; Fanout = 2; PIN Node = 'ADC_SSTRB'
+        Info: 2: + IC(4.017 ns) + CELL(0.280 ns) = 5.429 ns; Loc. = LC_X13_Y9_N1; Fanout = 1; REG Node = 'ADC_INTERFACE:ADC1|SR_CAPTURE[0]'
+        Info: Total cell delay = 1.412 ns ( 26.01 % )
+        Info: Total interconnect delay = 4.017 ns ( 73.99 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Fri Nov 20 11:43:28 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

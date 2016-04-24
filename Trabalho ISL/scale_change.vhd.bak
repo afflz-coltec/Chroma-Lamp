@@ -1,0 +1,30 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+USE WORK.pacote.ALL;
+
+ENTITY Scale_change IS
+	GENERIC (MINIMO_E: INTEGER; --VALOR MINIMO DA ESCALA DE ENTRADA
+	         MAXIMO_E: INTEGER;  --VALOR MAXIMO DA ESCALA DE ENTRADA
+	         MINIMO_S: INTEGER;  --VALOR MINIMO DA ESCALA DE SAIDA
+	         MAXIMO_S: INTEGER); --VALOR MAXIMO DA ESCALA DE SAIDA
+	PORT(clk: IN STD_LOGIC;
+	     entrada: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	     saida: OUT INTEGER);
+END ENTITY;
+
+ARCHITECTURE arch OF Scale_change IS
+SIGNAL temp_entrada: INTEGER;
+
+BEGIN
+
+temp_entrada <= minimo_s+(maximo_s - minimo_s)*(((TO_INTEGER(UNSIGNED(ENTRADA)))-minimo_e)/(maximo_e-minimo_e));
+	
+	--PROCESS (clk)
+	--BEGIN
+		--IF RISING_EDGE (clk) THEN
+			 saida <= temp_entrada;
+	--	END IF;
+	--END PROCESS;
+END arch;
+

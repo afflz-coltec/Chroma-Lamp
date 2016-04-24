@@ -1,0 +1,122 @@
+Flow report for Trabalho_VHDL
+Fri Nov 20 11:43:28 2015
+Quartus II Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Flow Summary                                                           ;
++-------------------------+----------------------------------------------+
+; Flow Status             ; Successful - Fri Nov 20 11:43:28 2015        ;
+; Quartus II Version      ; 9.1 Build 304 01/25/2010 SP 1 SJ Web Edition ;
+; Revision Name           ; Trabalho_VHDL                                ;
+; Top-level Entity Name   ; Trabalho_VHDL                                ;
+; Family                  ; MAX II                                       ;
+; Device                  ; EPM1270F256C5                                ;
+; Timing Models           ; Final                                        ;
+; Met timing requirements ; Yes                                          ;
+; Total logic elements    ; 356 / 1,270 ( 28 % )                         ;
+; Total pins              ; 15 / 212 ( 7 % )                             ;
+; Total virtual pins      ; 0                                            ;
+; UFM blocks              ; 0 / 1 ( 0 % )                                ;
++-------------------------+----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/20/2015 11:43:20 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Trabalho_VHDL       ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                              ;
++---------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                       ; Value                                                                  ; Default Value ; Entity Name ; Section Id     ;
++---------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                 ; 17727280432739.144802700001352                                         ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                                                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                                                                      ; --            ; --          ; --             ;
+; MISC_FILE                             ; D:/VHDL/TRABAKHO/Trabalho_VHDL.dpf                                     ; --            ; --          ; --             ;
+; MISC_FILE                             ; D:/VHDL/Trabalho ISL/Trabalho_VHDL.dpf                                 ; --            ; --          ; --             ;
+; MISC_FILE                             ; C:/Users/Aluno-Isl/Desktop/Trabalho ISL/Trabalho ISL/Trabalho_VHDL.dpf ; --            ; --          ; --             ;
+; MISC_FILE                             ; D:/AFFLz/COLTEC/2ANO/TECNICO/ISL/VHDL/Trabalho ISL/Trabalho_VHDL.dpf   ; --            ; --          ; --             ;
+; MISC_FILE                             ; C:/Users/Carol/Desktop/Trabalho ISL/Trabalho_VHDL.dpf                  ; --            ; --          ; --             ;
+; MISC_FILE                             ; C:/Users/Aluno-Isl/Downloads/Trabalho ISL/Trabalho_VHDL.dpf            ; --            ; --          ; --             ;
+; MISC_FILE                             ; C:/Users/Aluno-Isl/Desktop/Trabalho ISL/Trabalho_VHDL.dpf              ; --            ; --          ; --             ;
+; MISC_FILE                             ; D:/AFFLz/Trabalho ISL/Trabalho_VHDL.dpf                                ; --            ; --          ; --             ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                                                                   ; --            ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS    ; Off                                                                    ; --            ; --          ; eda_blast_fpga ;
++---------------------------------------+------------------------------------------------------------------------+---------------+-------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 230 MB              ; 00:00:03                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 219 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:00     ; 1.0                     ; 181 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 166 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:06     ; --                      ; --                  ; 00:00:05                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; lab-vermelho-HP  ; Windows Vista ; 6.1        ; x86_64         ;
+; Fitter                  ; lab-vermelho-HP  ; Windows Vista ; 6.1        ; x86_64         ;
+; Assembler               ; lab-vermelho-HP  ; Windows Vista ; 6.1        ; x86_64         ;
+; Classic Timing Analyzer ; lab-vermelho-HP  ; Windows Vista ; 6.1        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Trabalho_VHDL -c Trabalho_VHDL
+quartus_fit --read_settings_files=off --write_settings_files=off Trabalho_VHDL -c Trabalho_VHDL
+quartus_asm --read_settings_files=off --write_settings_files=off Trabalho_VHDL -c Trabalho_VHDL
+quartus_tan --read_settings_files=off --write_settings_files=off Trabalho_VHDL -c Trabalho_VHDL
+
+
+

@@ -1,0 +1,2 @@
+{ "Warning" "WCPT_FEATURE_DISABLED_POST" "LogicLock " "Warning: Feature LogicLock is only available with a valid subscription license. Please purchase a software subscription to gain full access to this feature." {  } {  } 0 0 "Feature %1!s! is only available with a valid subscription license. Please purchase a software subscription to gain full access to this feature." 1 0 "" 0 -1}
+{ "Warning" "WOPT_MLS_STUCK_PIN_HDR" "" "Warning: Output pins are stuck at VCC or GND" {  } {  } 0 0 "Output pins are stuck at VCC or GND" 1 0 "" 0 -1}
